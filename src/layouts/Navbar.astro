@@ -1,12 +1,21 @@
 ---
 import { Image } from "astro:assets";
+import Surface from "../components/Surface.astro";
+
+const navLinks = [
+  { href: "/tuition-workshops", text: "Tuition & Workshops" },
+  { href: "/music", text: "Music" },
+  { href: "/events", text: "Events" },
+  { href: "/about", text: "About" },
+  { href: "/contact", text: "Contact" },
+];
 ---
 
 <nav
   class="mx-auto max-w-container px-4 sm:px-6 lg:px-8 bg-white border-slate-600 border-b-4"
 >
   <div class="relative flex items-center py-8">
-    <a class="flex-none" href="/"
+    <a class="flex-none" href="/" aria-label="Go to Home"
       ><span class="sr-only">Helen Curtis Music</span>
       <Image
         src="/images/logo-main.webp"
@@ -15,12 +24,91 @@ import { Image } from "astro:assets";
         height="70"
       />
     </a>
-    <div class="ml-auto lg:mr-24 space-x-7 lg:flex lg:items-center">
-      <a class="hover:underline" href="/components">Tuition & Workshops</a>
-      <span class="hover:underline">Music</span>
-      <a class="hover:underline" href="/events">Events</a>
-      <a class="hover:underline" href="/about">About</a>
-      <a class="hover:underline" href="/contact">Contact</a>
+    <button
+      id="menu-button"
+      class="ml-auto mr-10 sm:hidden"
+      aria-label="Open the main menu"
+      aria-expanded="false"
+      aria-controls="menu"
+    >
+      <svg
+        class="block h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2.5"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+    <div
+      class="hidden sm:block ml-auto lg:mr-24 space-x-7 lg:flex lg:items-center"
+    >
+      {
+        navLinks.map((link) => (
+          <a
+            class="hover:underline"
+            href={link.href}
+            aria-label={`Go to ${link.text}`}
+          >
+            {link.text}
+          </a>
+        ))
+      }
     </div>
   </div>
 </nav>
+<dialog class="bg-opacity-0 bg-white">
+  <Surface class="text-center">
+    <button id="close-menu" class="mb-5 text-sm font-bold" autofocus
+      >(close menu)</button
+    >
+
+    <ul>
+      <li>
+        <a class="hover:underline my-5" href="/" aria-label="Go to Home">
+          Home
+        </a>
+      </li>
+      {
+        navLinks.map((link) => (
+          <li class="my-5">
+            <a
+              class="hover:underline"
+              href={link.href}
+              aria-label={`Go to ${link.text}`}
+            >
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </Surface>
+</dialog>
+
+<style is:global>
+  ::backdrop {
+    background-color: #d4d4d4;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23808582' fill-opacity='0.60' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    opacity: 0.75;
+  }
+</style>
+
+<script>
+  const openMenuBtn = document.getElementById("menu-button")!;
+  const closeMenuBtn = document.getElementById("close-menu")!;
+  const dialog = document.querySelector("dialog")!;
+
+  openMenuBtn.addEventListener("click", () => {
+    dialog.showModal();
+  });
+
+  closeMenuBtn.addEventListener("click", () => {
+    dialog.close();
+  });
+</script>
