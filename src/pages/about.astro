@@ -3,20 +3,19 @@ import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
-const { data, render } = await getEntry("pages", "home");
+const { data, render } = await getEntry("pages", "about");
 const { Content } = await render();
 ---
 
-<Layout title="Home">
+<Layout title="About">
   <div class="container mx-auto">
     <div class="md:flex w-full max-w-4xl items-center gap-6 my-20">
       <Image
         class="rounded-3xl"
-        src="/images/helen-at-piano.webp"
-        alt="Helen Curtis Music logo"
-        width="350"
-        height="350"
-        loading="eager"
+        src="/images/helen-about.webp"
+        alt="Picture of Helen Curtis"
+        width="400"
+        height="650"
       />
       <div>
         <h1 class="text-8xl">{data.heading}</h1>
