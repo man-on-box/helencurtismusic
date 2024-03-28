@@ -3,16 +3,22 @@ import { Image } from "astro:assets";
 ---
 
 <nav class="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
-  <div class="relative flex items-center py-[2.125rem]">
-    <a class="flex-none text-slate-900" href="/"
+  <div class="relative flex items-center py-8">
+    <a class="flex-none" href="/"
       ><span class="sr-only">Helen Curtis Music</span>
       <Image
         src="/images/logo-main.jpg"
         alt="Helen Curtis Music logo"
-        width="100"
-        height="100"
+        width="130"
+        height="130"
       />
     </a>
-    <div class="ml-auto mr-24 hidden lg:flex lg:items-center">1111</div>
+    <div class="ml-auto lg:mr-24 space-x-7 lg:flex lg:items-center">
+      <a class="hover:underline" href="/components">Tuition & Workshops</a>
+      <span class="hover:underline">Music</span>
+      <a class="hover:underline" href="/events">Events</a>
+      <a class="hover:underline" href="/about">About</a>
+      <a class="hover:underline" href="/contact">Contact</a>
+    </div>
   </div>
 </nav>
