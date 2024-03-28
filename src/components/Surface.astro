@@ -1,0 +1,12 @@
+---
+interface Props {
+  class?: string;
+}
+let additionalClasses = Astro.props.class || "";
+---
+
+<div
+  class={`bg-white p-10 border-slate-700 border-4 rounded-lg mx-3 ${additionalClasses}`}
+>
+  <slot />
+</div>

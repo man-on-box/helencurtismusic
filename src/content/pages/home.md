@@ -1,7 +1,7 @@
 ---
 heading: Hi! I'm Helen
 
-subHeading: Pianist, vocalist, percussionist perfomer and teacher
+subheading: Pianist, vocalist, percussionist perfomer and teacher
 ---
 
 ### About Helen

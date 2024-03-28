@@ -1,7 +1,8 @@
 ---
 import { getEntry } from "astro:content";
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import Surface from "../components/Surface.astro";
+import Banner from "../components/HeroBanner.astro";
 
 const { data, render } = await getEntry("pages", "about");
 const { Content } = await render();
@@ -9,23 +10,24 @@ const { Content } = await render();
 
 <Layout title="About">
   <div class="container mx-auto">
-    <div class="md:flex w-full max-w-4xl items-center gap-6 my-20">
-      <Image
-        class="rounded-3xl"
-        src="/images/helen-about.webp"
-        alt="Picture of Helen Curtis"
-        width="400"
-        height="650"
-      />
-      <div>
-        <h1 class="text-8xl">{data.heading}</h1>
-        <h2 class="text-2xl text-slate-600">{data.subHeading}</h2>
+    <div class="grid grid-cols-6">
+      <div class="col-span-6 md:col-start-1 lg:col-start-2">
+        <Banner
+          heading={data.heading}
+          subheading={data.subheading}
+          imgSrc="/images/helen-about.webp"
+          imgAlt="Picture of Helen Curtis"
+          imgWidth={400}
+          imgHeight={439}
+        />
+      </div>
+      <div class="col-span-6 lg:col-span-4 md:col-start-2 lg:col-start-3">
+        <Surface class="prose">
+          <article>
+            <Content />
+          </article>
+        </Surface>
       </div>
     </div>
-    <article
-      class="prose bg-white p-10 border-slate-700 border-4 rounded-lg lg:ml-44"
-    >
-      <Content />
-    </article>
   </div>
 </Layout>
