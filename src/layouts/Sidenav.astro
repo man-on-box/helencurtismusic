@@ -6,21 +6,25 @@ const sideNav = [
     imgSrc: "/images/helen-piano-587-587.webp",
     label: "Piano",
     link: "/music/piano",
+    imgAlt: "Helen playing the piano",
   },
   {
     imgSrc: "/images/helen-vocal-293-293.webp",
     label: "Vocal",
     link: "/music/vocal",
+    imgAlt: "Helen singing",
   },
   {
     imgSrc: "/images/congas-800-800.webp",
     label: "Percussion",
     link: "/music/percussion",
+    imgAlt: "Congas being played",
   },
   {
     imgSrc: "/images/helen-samba-730-730.webp",
     label: "Workshops",
     link: "/tuition-workshops",
+    imgAlt: "Helen leading a samba workshop",
   },
 ];
 ---
@@ -32,7 +36,7 @@ const sideNav = [
         <Image
           class="rounded-full transform group-hover:rotate-12 group-hover:scale-105"
           src={item.imgSrc}
-          alt={item.label}
+          alt={item.imgAlt}
           height="100"
           width="100"
         />
