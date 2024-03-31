@@ -12,6 +12,6 @@ She is a highly regarded performer and teacher/group leader who has played and t
 
 ### How can I find out more?
 
-Helen offers [private piano tuition and workshops](/tuition-workshops), as well you can find more about her music [here](/music) and see a list of [past and upcoming events](/events).
+Helen offers [private piano tuition and workshops](/tuition), as well you can find more about her music [here](/music) and see a list of [past and upcoming events](/events).
 
 For any questions or enquires, please [get in touch](/contact)!

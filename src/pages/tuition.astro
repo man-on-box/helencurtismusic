@@ -4,14 +4,14 @@ import Layout from "../layouts/Layout.astro";
 import Sidenav from "../layouts/Sidenav.astro";
 import Surface from "../components/Surface.astro";
 
-const { data, render } = await getEntry("pages", "tuition-workshops");
+const { data, render } = await getEntry("pages", "tuition");
 const { Content } = await render();
 ---
 
 <Layout title={data.heading}>
   <div class="container px-5 mx-auto">
     <div class="text-center my-10 md:my-20 mx-10">
-      <h1 class="text-5xl md:text-8xl bg-slate-800 text-white inline">
+      <h1 class="text-5xl md:text-8xl inline">
         {data.heading}
       </h1>
     </div>

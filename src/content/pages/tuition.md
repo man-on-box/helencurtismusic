@@ -8,15 +8,15 @@ Helen is a popular local piano teacher who enjoys teaching children, teens and a
 
 Helen can cultivate you or your childs musical development in the following ways:
 
-- Build a solid foundation
-- Cultivate a practice routine to suit the student
-- Develop confidence and ability
-- Learn to enjoy the time at your instrument - its what its all about surely!
-- Learn to read musical notation, interpret music and play creatively
-- Introduce varied music and styles of playing
-- Learn how to listen
-- Options to work towards ABRSM graded exams or non-graded equivalents
-- Improve cognitive function and mental/emotional health
+- **Build a solid foundation**
+- **Cultivate a practice routine to suit the student**
+- **Develop confidence and ability**
+- **Learn to enjoy the time at your instrument - its what its all about surely!**
+- **Learn to read musical notation, interpret music and play creatively**
+- **Introduce varied music and styles of playing**
+- **Learn how to listen**
+- **Options to work towards ABRSM graded exams or non-graded equivalents**
+- **Improve cognitive function and mental/emotional health**
 
 Any queries are warmly welcomed, please [get in touch](/contact).
 

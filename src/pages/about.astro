@@ -9,7 +9,7 @@ const { data, render } = await getEntry("pages", "about");
 const { Content } = await render();
 ---
 
-<Layout title="About">
+<Layout title={data.heading}>
   <div class="container px-5 mx-auto">
     <div class="flex justify-center">
       <Banner
