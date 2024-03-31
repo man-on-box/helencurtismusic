@@ -64,16 +64,14 @@ const navLinks = [
   </div>
 </nav>
 <dialog class="bg-opacity-0 bg-white">
-  <Surface class="text-center">
+  <Surface class="text-lg text-center">
     <button id="close-menu" class="mb-5 text-sm font-bold" autofocus
       >(close menu)</button
     >
 
     <ul>
-      <li>
-        <a class="hover:underline my-5" href="/" aria-label="Go to Home">
-          Home
-        </a>
+      <li class="my-5">
+        <a class="hover:underline" href="/" aria-label="Go to Home"> Home </a>
       </li>
       {
         navLinks.map((link) => (
