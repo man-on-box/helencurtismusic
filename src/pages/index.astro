@@ -1,6 +1,8 @@
 ---
 import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import Sidenav from "../layouts/Sidenav.astro";
 import Surface from "../components/Surface.astro";
 import Banner from "../components/HeroBanner.astro";
 
@@ -11,7 +13,7 @@ const { Content } = await render();
 <Layout title="Home">
   <div class="container mx-auto">
     <div class="grid grid-cols-6">
-      <div class="col-span-6 md:col-start-1 lg:col-start-2">
+      <div class="col-span-6 md:col-start-0 lg:col-start-0 mx-auto">
         <Banner
           heading={data.heading}
           subheading={data.subheading}
@@ -21,11 +23,14 @@ const { Content } = await render();
           imgHeight={312}
         />
       </div>
-      <div class="col-span-6 lg:col-span-4 md:col-start-2 lg:col-start-3">
-        <Surface class="prose">
-          <article>
-            <Content />
-          </article>
+      <div class="col-span-6">
+        <Surface class="mx-5">
+          <div class="flex gap-2">
+            <article class="prose">
+              <Content />
+            </article>
+            <Sidenav />
+          </div>
         </Surface>
       </div>
     </div>

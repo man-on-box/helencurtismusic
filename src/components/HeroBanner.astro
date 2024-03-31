@@ -20,9 +20,12 @@ const { props } = Astro;
     alt={props.imgAlt}
     width={props.imgWidth}
     height={props.imgHeight}
+    loading="eager"
   />
   <div class="text-center md:text-left">
-    <h1 class="text-5xl md:text-8xl">{props.heading}</h1>
-    <h2 class="text-2xl text-slate-600">{props.subheading}</h2>
+    <h1 class="text-5xl md:text-8xl bg-slate-700 text-white inline px-2">
+      {props.heading}
+    </h1>
+    <h2 class="text-2xl text-slate-600 my-3">{props.subheading}</h2>
   </div>
 </div>
