@@ -3,23 +3,17 @@ import { getEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Sidenav from "../layouts/Sidenav.astro";
 import Surface from "../components/Surface.astro";
-import Banner from "../components/HeroBanner.astro";
 
-const { data, render } = await getEntry("pages", "home");
+const { data, render } = await getEntry("pages", "tuition-workshops");
 const { Content } = await render();
 ---
 
-<Layout title="Home">
+<Layout title={data.heading}>
   <div class="container px-5 mx-auto">
-    <div class="flex justify-center">
-      <Banner
-        heading={data.heading}
-        subheading={data.subheading}
-        imgSrc="/images/helen-at-piano.webp"
-        imgAlt="Helen Curtis Music logo"
-        imgWidth={350}
-        imgHeight={312}
-      />
+    <div class="text-center my-10 md:my-20 mx-10">
+      <h1 class="text-5xl md:text-8xl bg-slate-800 text-white inline">
+        {data.heading}
+      </h1>
     </div>
     <div class="flex justify-center gap-8">
       <Sidenav />
