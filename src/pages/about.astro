@@ -3,31 +3,31 @@ import { getEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Surface from "../components/Surface.astro";
 import Banner from "../components/HeroBanner.astro";
+import Sidenav from "../layouts/Sidenav.astro";
 
 const { data, render } = await getEntry("pages", "about");
 const { Content } = await render();
 ---
 
 <Layout title="About">
-  <div class="container mx-auto">
-    <div class="grid grid-cols-6">
-      <div class="col-span-6 md:col-start-1 lg:col-start-2">
-        <Banner
-          heading={data.heading}
-          subheading={data.subheading}
-          imgSrc="/images/helen-about.webp"
-          imgAlt="Helen Curtis"
-          imgWidth={400}
-          imgHeight={439}
-        />
-      </div>
-      <div class="col-span-6 lg:col-span-4 md:col-start-2 lg:col-start-3">
-        <Surface class="prose">
-          <article>
-            <Content />
-          </article>
-        </Surface>
-      </div>
+  <div class="container px-5 mx-auto">
+    <div class="flex justify-center">
+      <Banner
+        heading={data.heading}
+        subheading={data.subheading}
+        imgSrc="/images/helen-about.webp"
+        imgAlt="Helen Curtis"
+        imgWidth={400}
+        imgHeight={439}
+      />
+    </div>
+    <div class="flex justify-center gap-5">
+      <Sidenav />
+      <Surface class="prose grow">
+        <article>
+          <Content />
+        </article>
+      </Surface>
     </div>
   </div>
 </Layout>
