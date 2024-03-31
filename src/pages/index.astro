@@ -12,27 +12,23 @@ const { Content } = await render();
 
 <Layout title="Home">
   <div class="container mx-auto">
-    <div class="grid grid-cols-6">
-      <div class="col-span-6 md:col-start-0 lg:col-start-0 mx-auto">
-        <Banner
-          heading={data.heading}
-          subheading={data.subheading}
-          imgSrc="/images/helen-at-piano.webp"
-          imgAlt="Helen Curtis Music logo"
-          imgWidth={350}
-          imgHeight={312}
-        />
-      </div>
-      <div class="col-span-6">
-        <Surface class="mx-5">
-          <div class="flex gap-2">
-            <article class="prose">
-              <Content />
-            </article>
-            <Sidenav />
-          </div>
-        </Surface>
-      </div>
+    <div class="flex justify-center">
+      <Banner
+        heading={data.heading}
+        subheading={data.subheading}
+        imgSrc="/images/helen-at-piano.webp"
+        imgAlt="Helen Curtis Music logo"
+        imgWidth={350}
+        imgHeight={312}
+      />
+    </div>
+    <div class="flex justify-center gap-5">
+      <Sidenav />
+      <Surface class="prose grow">
+        <article class="prose">
+          <Content />
+        </article>
+      </Surface>
     </div>
   </div>
 </Layout>
