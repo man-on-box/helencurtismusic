@@ -100,15 +100,15 @@ const navLinks = [
 </style>
 
 <script>
-  const openMenuBtn = document.getElementById("menu-button")!;
-  const closeMenuBtn = document.getElementById("close-menu")!;
-  const dialog = document.querySelector("dialog")!;
+  const openMenuBtn = document.getElementById("menu-button");
+  const closeMenuBtn = document.getElementById("close-menu");
+  const dialog = document.querySelector("dialog");
 
-  openMenuBtn.addEventListener("click", () => {
-    dialog.showModal();
+  openMenuBtn?.addEventListener("click", () => {
+    dialog?.showModal();
   });
 
-  closeMenuBtn.addEventListener("click", () => {
-    dialog.close();
+  closeMenuBtn?.addEventListener("click", () => {
+    dialog?.close();
   });
 </script>
