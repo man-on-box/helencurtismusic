@@ -4,7 +4,7 @@ heading: Music
 
 ## PIANO
 
-Helen's piano skills have been described as virtuosic. She straddles the world between classical and 'other'. Having studied Western classical piano she now performs with the Cuban band Charanga Del Norte and writes original songs for piano and vocals in her sibling duo Calluna Sun.
+Helen's piano skills have been described as virtuosic. She straddles the world between classical and 'other'. Having studied Western classical piano she now performs with the Cuban band [Charanga Del Norte](https://www.charangasue.com) and writes original songs for piano and vocals in her sibling duo Calluna Sun.
 
 <div data-oembed-url="https://soundcloud.com/user-985787947/que-maravilloso">
 <div class="m-0" style="max-width:320px"><iframe allow="encrypted-media" allowfullscreen="" src="https://w.soundcloud.com/player/?visual=true&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F491830272&amp;show_artwork=true" style="border: 0; width: 100%; height: 400px;"></iframe></div>
@@ -43,6 +43,14 @@ Helen is a highly respected percussionist. She taught the samba module at Hudder
 <hr />
 
 ## MORE MUSIC
+
+### [Charanga del Norte](https://www.charangasue.com)
+
+Charanga Del Norte was established in 1999 by Dr Sue Miller, and has become **one of the most formidable latin bands in the country**. They have played at many of the top venues across the UK including Londons, Barbican Centre, Manchester's Bridgewater Hall, Paradise Gardens and Lakes Alive Festival. Helen has been playing piano with the band since 2017 and can be heard on the following 'Charanga time!'
+
+> ‘Top Notch music form the one of Englands leading latin combos and the only 100 percent genuine charanga and pachanga band in the land, if you can't dance with them, you died last week’ -The Beat
+
+For more info please visit [www.charangasue.com](https://www.charangasue.com).
 
 ### [Sätteli Sisters](https://on.soundcloud.com/F2DsbVnxKLCwtkJc7)
 
