@@ -1,11 +1,11 @@
 ---
 import { getEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Sidenav from "../layouts/Sidenav.astro";
-import Banner from "../components/HeroBanner.astro";
 import Surface from "../components/Surface.astro";
+import Banner from "../components/HeroBanner.astro";
+import Sidenav from "../layouts/Sidenav.astro";
 
-const { data, render } = await getEntry("pages", "tuition");
+const { data, render } = await getEntry("pages", "contact");
 const { Content } = await render();
 ---
 
@@ -15,8 +15,8 @@ const { Content } = await render();
       <Banner
         heading={data.heading}
         subheading={data.subheading}
-        imgSrc="/images/helen-samba-730-730.webp"
-        imgAlt="Samba performance"
+        imgSrc="/images/georgian-painting-800-800.webp"
+        imgAlt="Georgian painting"
         imgWidth={400}
         imgHeight={400}
       />
