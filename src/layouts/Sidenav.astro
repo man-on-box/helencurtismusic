@@ -34,13 +34,15 @@ const sideNav = [
     sideNav.map((item) => (
       <a class="group" href={item.link}>
         <Image
-          class="rounded-full transform group-hover:rotate-3 group-hover:scale-105"
+          class="rounded-full transform group-hover:rotate-3 group-hover:scale-105 shadow-md"
           src={item.imgSrc}
           alt={item.imgAlt}
           height="100"
           width="100"
         />
-        <p class="text-center group-hover:underline text-lg">{item.label}</p>
+        <p class="text-center font-semibold group-hover:underline text-lg">
+          {item.label}
+        </p>
       </a>
     ))
   }

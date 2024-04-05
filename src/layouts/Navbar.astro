@@ -9,11 +9,11 @@ const navLinks = [
   { href: "/about", text: "About" },
   { href: "/contact", text: "Contact" },
 ];
+
+const mobileNavLinks = [{ href: "/", text: "Home" }, ...navLinks];
 ---
 
-<nav
-  class="mx-auto max-w-container px-4 sm:px-6 lg:px-8 bg-white border-slate-600 border-b-4"
->
+<nav class="mx-auto max-w-container px-4 sm:px-6 lg:px-8 bg-white shadow-md">
   <div class="relative flex items-center py-8">
     <a class="flex-none" href="/" aria-label="Go to Home"
       ><span class="sr-only">Helen Curtis Music</span>
@@ -71,14 +71,11 @@ const navLinks = [
     >
 
     <ul>
-      <li class="my-5">
-        <a class="hover:underline" href="/" aria-label="Go to Home"> Home </a>
-      </li>
       {
-        navLinks.map((link) => (
-          <li class="my-5">
+        mobileNavLinks.map((link) => (
+          <li class="my-8">
             <a
-              class="hover:underline"
+              class="hover:underline font-bold"
               href={link.href}
               aria-label={`Go to ${link.text}`}
             >

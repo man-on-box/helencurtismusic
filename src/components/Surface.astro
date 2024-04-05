@@ -5,8 +5,6 @@ interface Props {
 let additionalClasses = Astro.props.class || "";
 ---
 
-<div
-  class={`bg-white p-10 border-slate-700 border-4 rounded-lg ${additionalClasses}`}
->
+<div class={`bg-white shadow-md p-10 rounded-lg ${additionalClasses}`}>
   <slot />
 </div>
