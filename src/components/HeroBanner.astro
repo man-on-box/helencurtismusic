@@ -13,7 +13,10 @@ interface Props {
 const { props } = Astro;
 ---
 
-<div class="lg:flex max-w-4xl items-center gap-9 my-10 md:my-20 mx-10">
+<div
+  transition:animate="slide"
+  class="lg:flex max-w-4xl items-center gap-9 my-10 md:my-20 mx-10"
+>
   <Image
     class="mx-auto mb-5 lg:mb-0 rounded-3xl shadow-lg"
     src={props.imgSrc}
