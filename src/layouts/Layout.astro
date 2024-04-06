@@ -30,7 +30,7 @@ const { title } = Astro.props;
     <header>
       <Navbar />
     </header>
-    <main class="mb-auto">
+    <main transition:animate="fade" class="mb-auto">
       <slot />
     </main>
     <footer class="relative mt-12 w-full bg-slate-800">
