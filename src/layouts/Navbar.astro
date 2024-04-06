@@ -97,15 +97,16 @@ const mobileNavLinks = [{ href: "/", text: "Home" }, ...navLinks];
 </style>
 
 <script>
-  const openMenuBtn = document.getElementById("menu-button");
-  const closeMenuBtn = document.getElementById("close-menu");
-  const dialog = document.querySelector("dialog");
+  document.addEventListener("astro:page-load", () => {
+    const openMenuBtn = document.getElementById("menu-button");
+    const closeMenuBtn = document.getElementById("close-menu");
+    const dialog = document.querySelector("dialog");
 
-  openMenuBtn?.addEventListener("click", () => {
-    dialog?.showModal();
-  });
-
-  closeMenuBtn?.addEventListener("click", () => {
-    dialog?.close();
+    openMenuBtn?.addEventListener("click", () => {
+      dialog?.showModal();
+      closeMenuBtn?.addEventListener("click", () => {
+        dialog?.close();
+      });
+    });
   });
 </script>
