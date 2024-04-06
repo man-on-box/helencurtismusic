@@ -110,7 +110,6 @@ const mobileNavLinks = [{ href: "/", text: "Home" }, ...navLinks];
     });
   });
   document.addEventListener("astro:before-preparation", () => {
-    console.log("before preparation");
     const dialog = document.querySelector("dialog");
     dialog?.close();
   });
