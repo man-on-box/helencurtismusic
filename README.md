@@ -1,54 +1,74 @@
-# Astro Starter Kit: Basics
+# Helen Curtis Music Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Simple static site built with [Astro](https://github.com/withastro/astro) and styled with Tailwind CSS.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Currently deployed with Netlify here:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+https://helencurtismusic.netlify.app/
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## How to update content
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+All content designed to be updated belongs in the following directories
 
 ```text
 /
 ├── public/
-│   └── favicon.svg
+│   └── images/
 ├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── content/
+│   │   └── blogs
+│   │   └── pages
+│   │   └── site
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Images
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Images belong in `public/images` directory. Careful not to upload images that are too large, as it will affect web performance and will eat into free bandwidth tier.
 
-Any static assets, like images, can be placed in the `public/` directory.
+As a rule of thumb, scale images down so they are less than 1000px at either dimension, and save them as `.webp` files ideally (though `.jpg` and `.png` will work, just they are larger in file size)
 
-## 🧞 Commands
+### Content
 
-All commands are run from the root of the project, from a terminal:
+All content for the site is in `src/content` directory, and is written in [Markdown](https://www.markdownguide.org/basic-syntax/) files.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+#### Site content
 
-## 👀 Want to learn more?
+`src/content/pages` and `src/content/site` folders contain all the content for the relevant pages. You shouldn't rename/add/remove files here. If we want to do any changes here, it needs to be reflected in the actual `astro` pages.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+#### Blogs
+
+`src/content/blogs` contain all blog posts. They can be modified at any time. Here are the steps to adding a new blog:
+
+- Create a new file in blogs directory. Filename must be in this format: `yymmdd-general-title-of-blog.md` (example: `230601-calluna-sun-recording.md`)
+- File content must follow the following structure:
+
+```text
+---
+title: Calluna Sun recording session, at Valley Wood Studios
+date: 01 Jun 2023
+image: "/images/blog/calluna-sun-recording.jpg"
+---
+
+We are so excited to have finally made it the studio, recording with Calluna Sun.
+
+Continue to write any content, following the markdown specifications. Most common things are:
+
+## Here's a heading
+
+More text here
+
+### Subheading bla bla
+
+Lets make a nice looking list:
+
+- item one
+- item two
+
+etc etc.
+```
+
+Once the blog post is saved following the above steps, it will automatically be added to the blog list and most recent blogs etc.
+
+## How to deploy the changes
+
+(to be done)
