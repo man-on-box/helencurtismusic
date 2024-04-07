@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Surface from "../components/Surface.astro";
 
 const navLinks = [
+  { href: "/blog", text: "Blog" },
   { href: "/tuition", text: "Tuition & Workshops" },
   { href: "/music", text: "Music" },
   { href: "/events", text: "Events" },
@@ -28,7 +29,7 @@ const mobileNavLinks = [{ href: "/", text: "Home" }, ...navLinks];
     </a>
     <button
       id="menu-button"
-      class="ml-auto mr-10 sm:hidden"
+      class="ml-auto mr-10 md:hidden"
       aria-label="Open the main menu"
       aria-expanded="false"
       aria-controls="menu"
@@ -48,7 +49,7 @@ const mobileNavLinks = [{ href: "/", text: "Home" }, ...navLinks];
       </svg>
     </button>
     <div
-      class="hidden sm:block ml-auto lg:mr-24 space-x-7 lg:flex lg:items-center"
+      class="hidden md:block ml-auto lg:mr-24 space-x-7 lg:flex lg:items-center"
     >
       {
         navLinks.map((link) => (
@@ -109,7 +110,7 @@ const mobileNavLinks = [{ href: "/", text: "Home" }, ...navLinks];
       });
     });
   });
-  document.addEventListener("astro:before-preparation", () => {
+  document.addEventListener("astro:after-preparation", () => {
     const dialog = document.querySelector("dialog");
     dialog?.close();
   });

@@ -1,0 +1,72 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Surface from "../../components/Surface.astro";
+import Card from "../../components/Card.astro";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blogs");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const blogEntries = (await getCollection("blogs")).reverse();
+
+const { props } = Astro;
+const { Content } = await props.entry.render();
+---
+
+<Layout title={props.entry.data.title}>
+  <div class="container px-5 mx-auto">
+    <div class="mt-10 flex justify-center gap-8">
+      <Surface class="grow max-w-4xl">
+        <div class="mb-5">
+          <a href="/blog" class="text-slate-500 hover:underline"
+            >← Back to blog</a
+          >
+        </div>
+        {
+          props.entry.data.image && (
+            <img
+              loading="lazy"
+              src={props.entry.data.image}
+              alt={props.entry.data.title}
+              class="w-full h-56 object-cover object-center lg:h-80 rounded mb-8"
+            />
+          )
+        }
+        <article class="prose mb-8">
+          <span class="text-sm text-slate-500">
+            {props.entry.data.date}
+          </span>
+          <h1>{props.entry.data.title}</h1>
+          <Content />
+        </article>
+        <div class="my-5">
+          <a href="/blog" class="text-slate-500 hover:underline"
+            >← Back to blog</a
+          >
+        </div>
+        <hr />
+        <p class="my-8 text-slate-500">Latest blog posts:</p>
+        <div class="max-w-1xl">
+          {
+            blogEntries.slice(0, 3).map((entry) => (
+              <a title={entry.data.title} href={`/blog/${entry.slug}`}>
+                <Card
+                  heading={entry.data.title}
+                  subheading={entry.data.date}
+                  imgSrc={entry.data.image}
+                >
+                  <p>{entry.body.slice(0, 200)}...</p>
+                </Card>
+              </a>
+            ))
+          }
+        </div>
+      </Surface>
+    </div>
+  </div>
+</Layout>
