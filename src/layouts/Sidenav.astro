@@ -32,7 +32,7 @@ const sideNav = [
 <div class="hidden sm:flex flex-col gap-3 items-center">
   {
     sideNav.map((item) => (
-      <a class="group" href={item.link}>
+      <a class="group" href={item.link} data-astro-reload>
         <Image
           class="rounded-full transform group-hover:rotate-3 group-hover:scale-105 shadow-md"
           src={item.imgSrc}
