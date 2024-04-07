@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const blogEntries = (await getCollection("blogs")).reverse();
+const blogEntries = await getCollection("blogs");
 
 const { props } = Astro;
 const { Content } = await props.entry.render();
@@ -22,11 +22,6 @@ const { Content } = await props.entry.render();
   <div class="container px-5 mx-auto">
     <div class="mt-10 flex justify-center gap-8">
       <Surface class="grow max-w-4xl">
-        <div class="mb-5">
-          <a href="/blog" class="text-slate-500 hover:underline"
-            >← Back to blog</a
-          >
-        </div>
         {
           props.entry.data.image && (
             <img
@@ -44,7 +39,7 @@ const { Content } = await props.entry.render();
           <h1>{props.entry.data.title}</h1>
           <Content />
         </article>
-        <div class="my-5">
+        <div class="mb-5 mt-16">
           <a href="/blog" class="text-slate-500 hover:underline"
             >← Back to blog</a
           >
