@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
+import GTag from "../components/GTag.astro";
 import Navbar from "./Navbar.astro";
 
 const { data } = await getEntry("site", "general");
@@ -15,6 +16,7 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <GTag />
     <meta charset="UTF-8" />
     <meta
       name="description"

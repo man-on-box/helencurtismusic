@@ -2,6 +2,7 @@
   "name": "helencurtismusic",
   "type": "module",
   "version": "0.0.1",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,6 +12,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/partytown": "^2.1.0",
     "@astrojs/tailwind": "^5.1.0",
     "@tailwindcss/typography": "^0.5.12",
     "astro": "^4.5.10",
