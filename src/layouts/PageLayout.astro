@@ -21,7 +21,7 @@ const { title, hero, showSideNav = true } = Astro.props;
 ---
 
 <Layout title={title}>
-  <div class="mb-10 bg-green-500 bg-opacity-20 flex justify-center">
+  <div class="bg-emerald-200 bg-opacity-50 flex justify-center">
     <Banner
       heading={hero.heading}
       subheading={hero.subheading}
@@ -31,7 +31,7 @@ const { title, hero, showSideNav = true } = Astro.props;
       imgHeight={hero.imgHeight}
     />
   </div>
-  <div class="container px-5 mx-auto">
+  <div class="container my-20 px-5 mx-auto">
     <div class="flex justify-center gap-8">
       {showSideNav && <Sidenav />}
       <Surface class="grow max-w-4xl">
