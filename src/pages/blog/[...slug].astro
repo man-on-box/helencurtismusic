@@ -19,16 +19,16 @@ const { Content } = await props.entry.render();
 ---
 
 <Layout title={props.entry.data.title}>
-  <div class="container px-5 mx-auto">
+  <div class="container mx-auto px-5">
     <div class="mt-10 flex justify-center gap-8">
-      <Surface class="grow max-w-4xl">
+      <Surface class="max-w-4xl grow">
         {
           props.entry.data.image && (
             <img
               loading="lazy"
               src={props.entry.data.image}
               alt={props.entry.data.title}
-              class="w-full h-56 object-cover object-center lg:h-80 rounded mb-8"
+              class="mb-8 h-56 w-full rounded object-cover object-center lg:h-80"
             />
           )
         }

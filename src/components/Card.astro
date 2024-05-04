@@ -9,7 +9,7 @@ const { props } = Astro;
 ---
 
 <div
-  class="my-8 border group hover:bg-slate-50 overflow-hidden rounded shadow-sm lg:flex"
+  class="group my-8 overflow-hidden rounded border shadow-sm hover:bg-slate-50 lg:flex"
 >
   {
     props.imgSrc && (
@@ -17,8 +17,8 @@ const { props } = Astro;
         loading="lazy"
         src={props.imgSrc}
         alt={props.heading}
-        class="w-full h-56 group-hover:brightness-110 object-cover object-center lg:w-56
-    lg:h-auto"
+        class="h-56 w-full object-cover object-center group-hover:brightness-110 lg:h-auto
+    lg:w-56"
       />
     )
   }
@@ -26,7 +26,7 @@ const { props } = Astro;
     <span class="text-sm text-slate-500">
       {props.subheading}
     </span>
-    <h2 class="text-xl text-slate-900 font-semibold my-5">
+    <h2 class="my-5 text-xl font-semibold text-slate-900">
       {props.heading}
     </h2>
     <slot />

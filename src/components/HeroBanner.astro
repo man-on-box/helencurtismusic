@@ -13,9 +13,9 @@ interface Props {
 const { props } = Astro;
 ---
 
-<div class="lg:flex max-w-4xl items-center gap-9 my-10 md:my-20 mx-10">
+<div class="mx-10 my-10 max-w-4xl items-center gap-9 md:my-20 lg:flex">
   <Image
-    class="mx-auto mb-5 lg:mb-0 rounded-3xl shadow-lg"
+    class="mx-auto mb-5 rounded-3xl shadow-lg lg:mb-0"
     src={props.imgSrc}
     alt={props.imgAlt}
     width={props.imgWidth}
@@ -24,14 +24,14 @@ const { props } = Astro;
   />
   <div class="text-center lg:text-left">
     <h1
-      class="text-5xl md:text-7xl lg:text-8xl tracking-tight font-extrabold inline"
+      class="inline text-5xl font-extrabold tracking-tight md:text-7xl lg:text-8xl"
     >
       {props.heading}
     </h1>
     <slot />
     {
       props.subheading && (
-        <h2 class="text-2xl text-slate-600 tracking-tight font-semibold my-3">
+        <h2 class="my-3 text-2xl font-semibold tracking-tight text-slate-600">
           {props.subheading}
         </h2>
       )
