@@ -1,0 +1,46 @@
+---
+import { getEntry } from "astro:content";
+
+const { data } = await getEntry("site", "general");
+---
+
+<footer class="relative mt-12 w-full bg-slate-700">
+  <button
+    id="scroll-top"
+    title="Scroll to top"
+    aria-label="Scroll to top"
+    class="absolute -top-10 right-10 flex h-16 w-16 items-center justify-center rounded-full border-4 border-slate-700 bg-white shadow hover:scale-105"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="h-6 w-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
+    </svg>
+  </button>
+
+  <div class="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+    <p class="text-sm text-white">
+      {data.footerText}
+    </p>
+  </div>
+</footer>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const toTop = document.getElementById("scroll-top");
+
+    toTop?.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+</script>
