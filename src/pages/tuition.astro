@@ -1,33 +1,22 @@
 ---
 import { getEntry } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import Sidenav from "../layouts/Sidenav.astro";
-import Banner from "../components/HeroBanner.astro";
-import Surface from "../components/Surface.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 
 const { data, render } = await getEntry("pages", "tuition");
 const { Content } = await render();
 ---
 
-<Layout title={data.heading}>
-  <div class="container px-5 mx-auto">
-    <div class="flex justify-center">
-      <Banner
-        heading={data.heading}
-        subheading={data.subheading}
-        imgSrc="/images/helen-samba-730-730.webp"
-        imgAlt="Samba performance"
-        imgWidth={400}
-        imgHeight={400}
-      />
-    </div>
-    <div class="flex justify-center gap-8">
-      <Sidenav />
-      <Surface class="prose grow">
-        <article>
-          <Content />
-        </article>
-      </Surface>
-    </div>
-  </div>
-</Layout>
+<PageLayout
+  title={data.heading}
+  hero={{
+    heading: data.heading,
+    imgSrc: "/images/helen-samba-730-730.webp",
+    imgAlt: "Samaba performance",
+    imgWidth: 400,
+    imgHeight: 400,
+  }}
+>
+  <article class="prose">
+    <Content />
+  </article>
+</PageLayout>

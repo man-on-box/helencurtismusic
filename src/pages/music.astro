@@ -1,51 +1,22 @@
 ---
 import { getEntry } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import Sidenav from "../layouts/Sidenav.astro";
-import Surface from "../components/Surface.astro";
-import Banner from "../components/HeroBanner.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 
 const { data, render } = await getEntry("pages", "music");
 const { Content } = await render();
-
-const soundCloudUrl = "https://on.soundcloud.com/a52tBKq1VJEtdGLi7";
 ---
 
-<Layout title={data.heading}>
-  <div class="container px-5 mx-auto">
-    <div class="flex justify-center">
-      <Banner
-        heading={data.heading}
-        subheading={data.subheading}
-        imgSrc="/images/helen-vocal-293-293.webp"
-        imgAlt="Helen Curtis"
-        imgWidth={293}
-        imgHeight={293}
-      >
-        <h2 class="text-2xl text-slate-600 my-3">
-          You can find more of Helens music on <a
-            class="underline"
-            href="https://on.soundcloud.com/a52tBKq1VJEtdGLi7"
-            target="_blank">SoundCloud</a
-          >
-        </h2>
-      </Banner>
-    </div>
-    <div class="flex justify-center gap-8">
-      <Sidenav />
-      <Surface class="prose grow">
-        <article>
-          <Content />
-        </article>
-        <hr />
-        <p>
-          You can find more of Helens music on <a
-            class="underline"
-            href="https://on.soundcloud.com/a52tBKq1VJEtdGLi7"
-            target="_blank">SoundCloud</a
-          >.
-        </p>
-      </Surface>
-    </div>
-  </div>
-</Layout>
+<PageLayout
+  title={data.heading}
+  hero={{
+    heading: data.heading,
+    imgSrc: "/images/helen-vocal-293-293.webp",
+    imgAlt: "Helen Curtis",
+    imgWidth: 293,
+    imgHeight: 293,
+  }}
+>
+  <article class="prose">
+    <Content />
+  </article>
+</PageLayout>

@@ -1,33 +1,23 @@
 ---
 import { getEntry } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import Surface from "../components/Surface.astro";
-import Banner from "../components/HeroBanner.astro";
-import Sidenav from "../layouts/Sidenav.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 
 const { data, render } = await getEntry("pages", "events");
 const { Content } = await render();
 ---
 
-<Layout title={data.heading}>
-  <div class="container px-5 mx-auto">
-    <div class="flex justify-center">
-      <Banner
-        heading={data.heading}
-        subheading={data.subheading}
-        imgSrc="/images/singing-outside-616-616.webp"
-        imgAlt="Singing event outside"
-        imgWidth={350}
-        imgHeight={350}
-      />
-    </div>
-    <div class="flex justify-center gap-8">
-      <Sidenav />
-      <Surface class="prose grow">
-        <article>
-          <Content />
-        </article>
-      </Surface>
-    </div>
-  </div>
-</Layout>
+<PageLayout
+  title={data.heading}
+  hero={{
+    heading: data.heading,
+    subheading: data.subheading,
+    imgSrc: "/images/singing-outside-616-616.webp",
+    imgAlt: "Singing event outside",
+    imgWidth: 350,
+    imgHeight: 350,
+  }}
+>
+  <article class="prose">
+    <Content />
+  </article>
+</PageLayout>
