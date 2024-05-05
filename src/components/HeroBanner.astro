@@ -19,7 +19,7 @@ const { props } = Astro;
     class="mx-auto mb-5 rounded-3xl shadow-lg lg:mb-0"
     src={props.imgSrc}
     alt={props.imgAlt}
-    width={props.imgWidth}
+    densities={[1, 1.5, 2]}
     height={props.imgHeight}
     loading="eager"
   />
