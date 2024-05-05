@@ -3,32 +3,26 @@ import Layout from "./Layout.astro";
 import Sidenav from "./Sidenav.astro";
 import Surface from "../components/Surface.astro";
 import Banner from "../components/HeroBanner.astro";
+import type { Props as BannerProps } from "../components/HeroBanner.astro";
 
 interface Props {
   title: string;
-  hero: {
-    heading: string;
-    subheading?: string;
-    imgSrc: string;
-    imgAlt: string;
-    imgWidth: number;
-    imgHeight: number;
-  };
+  banner: BannerProps;
   showSideNav?: boolean;
 }
 
-const { title, hero, showSideNav = true } = Astro.props;
+const { title, banner, showSideNav = true } = Astro.props;
 ---
 
 <Layout title={title}>
   <div class="flex justify-center bg-emerald-200 bg-opacity-50">
     <Banner
-      heading={hero.heading}
-      subheading={hero.subheading}
-      imgSrc={hero.imgSrc}
-      imgAlt={hero.imgAlt}
-      imgWidth={hero.imgWidth}
-      imgHeight={hero.imgHeight}
+      heading={banner.heading}
+      subheading={banner.subheading}
+      imgSrc={banner.imgSrc}
+      imgAlt={banner.imgAlt}
+      imgWidth={banner.imgWidth}
+      imgHeight={banner.imgHeight}
     />
   </div>
   <div class="container mx-auto my-20 px-5">

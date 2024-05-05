@@ -2,6 +2,7 @@
 import { getCollection, getEntry } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
 import Card from "../../components/Card.astro";
+import headerImage from "../../assets/images/beach-830-830.webp";
 
 const { data, render } = await getEntry("pages", "blog");
 const blogEntries = (await getCollection("blogs")).reverse();
@@ -10,10 +11,10 @@ const { Content } = await render();
 
 <PageLayout
   title={data.heading}
-  hero={{
+  banner={{
     heading: data.heading,
     subheading: data.subheading,
-    imgSrc: "/images/beach-830-830.webp",
+    imgSrc: headerImage,
     imgAlt: "Picture of beach",
     imgWidth: 350,
     imgHeight: 350,
@@ -30,7 +31,7 @@ const { Content } = await render();
           <Card
             heading={entry.data.title}
             subheading={entry.data.date}
-            imgSrc={entry.data.image}
+            imgSrc={entry.data.cover}
           >
             <p>{entry.body.slice(0, 200)}...</p>
           </Card>

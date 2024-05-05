@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import Surface from "../../components/Surface.astro";
 import Card from "../../components/Card.astro";
@@ -15,6 +16,7 @@ export async function getStaticPaths() {
 const blogEntries = await getCollection("blogs");
 
 const { props } = Astro;
+
 const { Content } = await props.entry.render();
 ---
 
@@ -23,11 +25,11 @@ const { Content } = await props.entry.render();
     <div class="mt-10 flex justify-center gap-8">
       <Surface class="max-w-4xl grow">
         {
-          props.entry.data.image && (
-            <img
+          props.entry.data.cover && (
+            <Image
               loading="lazy"
-              src={props.entry.data.image}
-              alt={props.entry.data.title}
+              src={props.entry.data.cover}
+              alt={props.entry.data.coverAlt || null}
               class="mb-8 h-56 w-full rounded object-cover object-center lg:h-80"
             />
           )
@@ -53,7 +55,8 @@ const { Content } = await props.entry.render();
                 <Card
                   heading={entry.data.title}
                   subheading={entry.data.date}
-                  imgSrc={entry.data.image}
+                  imgSrc={entry.data.cover}
+                  imgAlt={entry.data.coverAlt}
                 >
                   <p>{entry.body.slice(0, 200)}...</p>
                 </Card>
